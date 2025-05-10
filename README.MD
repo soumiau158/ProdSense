@@ -54,5 +54,3 @@ ProdSense is a Streamlit app powered by CrewAI that scrapes product details from
 ## Why ProdSense?
 
 ProdSense is a playground for exploring multi-agent AI, web scraping, and recommendation systems. It’s rough around the edges but offers a solid starting point for enthusiasts who enjoy dissecting code and experimenting with data.
-
-*Built by a tinkerer, for tinkerers.*
